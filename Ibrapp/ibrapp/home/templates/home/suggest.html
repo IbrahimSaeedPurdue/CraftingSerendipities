@@ -1,0 +1,104 @@
+{% extends "home/base.html" %}
+{% block NavBar %}
+{% load static %}
+    <div class="section section-header">
+        <div class="parallax filter filter-color-red">
+            <div class="image"
+            style="background-image: url('{%static 'home/assets/img/Mainbg8.jpg' %}')">
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="title-area">
+                    <p>Reem Hassan</p>
+                    <h1 class="title-modern">Crafting Serendipities</h1>
+                    <h2>Suggestions</h2>
+                        <div class="separator line-separator">♦</div>
+                    </div>
+                    <div class="button-get-started">
+                        <a href=" {% url 'suggest-create' %}"class="btn btn-white btn-fill btn-lg ">
+                            Post A suggestion
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock NavBar %}
+
+{% block content %}
+<!--suggestion area!!-->
+<div class="section section-header-freebie">
+    <div class="parallax">
+        <div class="image" style="background-color:#eeeeee;">
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="title-area">
+                        <h1>Suggestion List</h1>
+                        <div class="separator separator-danger">✻</div>
+                        <p class="description">Give me your suggestions now wowowo!! or whatever idk</p>
+                    </div>
+                </div>
+
+
+    {% for post in posts %}
+                <div class="team">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card card-member">
+                                        <div class="content">
+                                            <div class="avatar avatar-danger">
+                                                <img alt="..." class="img-circle" src="{{post.author.profile.image.url}}"/>
+                                            </div>
+                                            <div class="description">
+                                                <h3 class="title"><a href="{% url 'suggest-userposts' post.author.username %}" style="color:black;">{{post.author}}</a></h3>
+
+                                                <p><h4>{{post.content}}</h4></p>
+                                                <p class="text-muted">{{post.date_posted|date:"F d, Y" }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    {% endfor %}
+
+            </div>
+             {% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-danger btn-fill mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    {% endif %}
+            <hr>
+    </div>
+</div>
+</div>
+
+{% endblock content %}
+
+{% block suggestmain %}
+
+{% endblock suggestmain %}

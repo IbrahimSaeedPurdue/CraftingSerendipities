@@ -1,0 +1,105 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+{% block NavBar %}
+{% load static %}
+
+<div class="section section-header-freebie">
+    <div class="parallax filter filter-color-red">
+        <div class="image"
+        style="background-image: url('{%static 'home/assets/img/Mainbg4.jpg' %}')">
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="title-area">
+                <h1>Suggestion Profile</h1>
+
+                <div class="button-get-started">
+                </div>
+                <div class="separator line-separator">♦</div>
+            </div>
+
+            <div class="button-get-started">
+                <a href=" {% url 'home-main' %}" style="margin-bottom:40px;" target="" class="btn btn-white btn-fill btn-lg ">
+                    Back To Home
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+{% endblock NavBar %}
+
+
+{% block content %}
+
+<div class="container">
+    <h2>{{user.username}}'s Suggestion Profile</h2>
+    <hr>
+    <div class="span3 well">
+        <center>
+            <img src="{{ user.profile.image.url }}" width="180" height="180" class="img-circle">
+        </center>
+        <p class="description">{{user.email}}</p>
+    </div>
+
+    <!-- ProfileUpdateForm() -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            {{u_form|crispy}}
+            {{p_form|crispy}}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-danger btn-fill" type="submit">Update</button>
+        </div>
+    </form>
+    <!-- End -->
+    <hr>
+
+    <h2>Suggestions History</h2>
+    <hr>
+    {% if user.post_set.all.count > 0 %}
+        {% for post in user.post_set.all %}
+             <div class="team">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-member">
+                                                    <div class="content">
+                                                        <div class="description">
+                                                            <p class="text-muted">{{post.date_posted|date:"F d, Y" }}</p>
+                                                            <h3> {{post.content}}</h3>
+                                                        </div>
+
+                                                                <div>
+                                                        <a class="btn btn-danger btn-fill btn-sm" type="submit" href="{% url 'suggest-update' post.id %}">Edit Suggestion</a>
+                                                                </div>
+                                                                 <div>
+                                                        <a class="btn btn-danger btn-fill btn-sm" type="submit" href="{% url 'suggest-delete' post.id %}">Delete Suggestion</a>
+                                                                </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+        {% endfor %}
+    {% else %}
+<h4 class="text-muted">No Suggestions</h4>
+{% endif %}
+    <hr>
+</div>
+</div>
+{% endblock content %}
+
+{% block suggestmain %}{% endblock suggestmain %}

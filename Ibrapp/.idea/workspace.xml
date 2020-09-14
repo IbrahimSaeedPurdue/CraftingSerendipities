@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="742dcd3d-7acf-42c6-9b05-9b718afa8949" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ibrapp" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>asset</find>
+      <find>font</find>
+      <find>-fami</find>
+      <find>assets</find>
+      <find>back to</find>
+      <find>section-header</find>
+      <find>margin</find>
+      <find>static</find>
+      <find>sugg</find>
+      <find>post-update</find>
+      <find>``````</find>
+      <find>suggest-main</find>
+      <find>suggest_main</find>
+      <find>line-separator</find>
+      <find>title-modern</find>
+      <find>title-area</find>
+      <find>title-moder</find>
+      <find>.title-area .</find>
+      <find>h1</find>
+      <find>who we</find>
+      <find>content</find>
+      <find>separator</find>
+      <find>card</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\Zoro\PycharmProjects\ibrapp\ibrapp</dir>
+      <dir>C:\Users\Zoro\PycharmProjects\ibrapp</dir>
+    </dirStrings>
+  </component>
+  <component name="ProjectId" id="1hU5NbCnHTiV9g5Vo5tNz0D0jiY" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Buildout</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zoro\PycharmProjects\ibrapp\ibrapp\home\templates\auth" />
+      <recent name="C:\Users\Zoro\PycharmProjects\ibrapp\ibrapp\home\templates\home" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="742dcd3d-7acf-42c6-9b05-9b718afa8949" name="Default Changelist" comment="" />
+      <created>1560349641311</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560349641311</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ibrapp/users/views.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

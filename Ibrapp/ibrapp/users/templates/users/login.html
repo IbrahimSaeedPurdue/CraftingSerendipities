@@ -1,0 +1,55 @@
+{% extends "home/base.html" %}
+{% block NavBar %}
+{% load static %}
+
+    <div class="section section-header-freebie">
+        <div class="parallax filter filter-color-red">
+            <div class="image"
+            style="background-image: url('{%static 'home/assets/img/Mainbg4.jpg' %}')">
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="title-area">
+                    <h1>Login</h1>
+                        <div class="separator line-separator">♦</div>
+                    </div>
+
+                    <div class="button-get-started">
+                        <a href=" {% url 'home-main' %}"style="margin-bottom:40px;" target="" class="btn btn-white btn-fill btn-lg ">
+                            Back To Home
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock NavBar %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="section">
+    <div class="content-section container">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mbs-4">Login</legend>
+                {{form|crispy}}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-danger btn-fill" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">Need An Account?
+                <a href="{% url 'register'%}">Sign Up Now</a> </small>
+        </div>
+        <hr>
+    </div>
+</div>
+{% endblock content %}
+
+{% block suggestmain %}
+
+{% endblock suggestmain %}
